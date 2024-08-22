@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Add Student</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+						integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+						crossorigin="anonymous">
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+				  <!-- Brand -->
+				  <a class="navbar-brand" href="#">QISCET</a>
+
+				  <!-- Toggler/collapsibe Button -->
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+
+				  <!-- Navbar links -->
+				  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+				    <ul class="navbar-nav">
+				      <li class="nav-item">
+				        <a class="nav-link" href="@{/}">QISCET Students</a>
+				      </li>
+				    </ul>
+				  </div>
+				</nav>
+<br><br>		
+		
+		<div class="container">
+			<div>
+				<h1>Add Details</h1>
+			</div>
+			<form th:action="@{/qiscet}" th:object="${student}" method="post">
+			  <div class="form-col">
+			    <div class="col">
+					<label>First Name </label>
+			      <input type="text" th:field="*{firstname}" class="form-control" name="firstname" placeholder="First name">
+			    </div>
+			    <div class="col">
+					<label>last Name </label>
+			      <input type="text" class="form-control" th:field="*{lastname}" name="lastname" placeholder="Last name">
+			    </div>
+				<div class="col">
+					<label>Email </label>
+					<input type="email" class="form-control" th:field="*{email}" name="email" placeholder="email">
+				</div>
+				<div class="box-footer">
+					<button type="submit" class="btn btn-success">Submit</button>
+					<button type="reset" class="btn btn-success">Reset</button>
+								</div>
+			  </div>
+			</form>
+		</div>
+	</body>
+</html>
